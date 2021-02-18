@@ -2,10 +2,17 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
+import GlobalStyle from '../resources/styles/globalStyle';
+
 import App from 'next/app';
 
 function MyApp({ Component, pageProps }) {
-    return <Component {...pageProps} />;
+    return (
+        <>
+            <Component {...pageProps} />
+            <GlobalStyle />
+        </>
+    );
 }
 
 MyApp.getInitialProps = async (appContext) => {
@@ -16,6 +23,6 @@ MyApp.getInitialProps = async (appContext) => {
 export default MyApp;
 
 MyApp.propTypes = {
-    Component: PropTypes.node.isRequired,
+    Component: PropTypes.any.isRequired,
     pageProps: PropTypes.object.isRequired
 };

@@ -1,11 +1,11 @@
-import HomeCustom from '../../../themes/custom/Home';
-import HomeLucid from '../../../themes/lucid/Home';
-import HomeDefault from '../../../themes/default/Home';
+import React from 'react';
 
-export default function HomeFactory({ theme }) {
-    const obj = {
-        custom: <HomeCustom />,
-        lucid: <HomeLucid />
-    };
-    return obj[theme] || <HomeDefault />;
+// import PropTypes from 'prop-types';
+
+import HomeContainer from '../../../containers/home/home';
+
+export default function HomeFactory() {
+    return <HomeContainer />;
 }
+
+HomeFactory.propTypes = {};
