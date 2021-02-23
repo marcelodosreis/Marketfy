@@ -2,17 +2,12 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import GlobalStyle from '../resources/styles/globalStyle';
+import 'tailwindcss/tailwind.css';
 
 import App from 'next/app';
 
 function MyApp({ Component, pageProps }) {
-    return (
-        <>
-            <Component {...pageProps} />
-            <GlobalStyle />
-        </>
-    );
+    return <Component {...pageProps} />;
 }
 
 MyApp.getInitialProps = async (appContext) => {

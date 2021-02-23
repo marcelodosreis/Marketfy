@@ -1,11 +1,7 @@
 import React from 'react';
 
-import Navbar from '../../library/common/components/navbar/navbar';
-
-const HomeContainer = () => (
-    <>
-        <Navbar />
-    </>
-);
+const HomeContainer = () => {
+    return <h1>Home Container</h1>;
+};
 
 export default HomeContainer;
