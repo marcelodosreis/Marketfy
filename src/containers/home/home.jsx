@@ -3,7 +3,7 @@ import React from 'react';
 const HomeContainer = () => {
     return (
         <>
-            <div className="bg-white">
+            {/* <div className="bg-white">
                 <main className="my-8">
                     <div className="container mx-auto px-6">
                         <div className="h-64 rounded-md overflow-hidden bg-cover bg-center">
@@ -261,7 +261,7 @@ const HomeContainer = () => {
                         </div>
                     </div>
                 </main>
-            </div>
+            </div>*/}
         </>
     );
 };

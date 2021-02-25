@@ -7,6 +7,8 @@ import App from 'next/app';
 import Header from '../library/common/components/Header/Header';
 import Cart from '../library/common/components/Cart/Cart';
 
+import CombineProviders from '../library/utilities/providers/index';
+
 import 'tailwindcss/tailwind.css';
 
 import NProgress from 'nprogress';
@@ -20,11 +22,11 @@ Router.events.on('routeChangeError', () => NProgress.done());
 
 function MyApp({ Component, pageProps }) {
     return (
-        <>
+        <CombineProviders>
             <Header />
             <Cart />
             <Component {...pageProps} />
-        </>
+        </CombineProviders>
     );
 }
 

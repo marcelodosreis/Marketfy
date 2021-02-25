@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import Link from 'next/link';
+
+import { toggleCartSidebar } from '../../../../main/store/modules/cart/action';
 
 const Header = () => {
+    const { isOpen: cartIsOpen } = useSelector((state) => state.cart);
+    const [headerIsOpen, setHeaderIsOpen] = useState(false);
+    const dispatch = useDispatch();
+
     return (
         <header>
             <div className="container mx-auto px-6 py-3">
@@ -30,7 +39,9 @@ const Header = () => {
                         Brand
                     </div>
                     <div className="flex items-center justify-end w-full">
-                        <button className="text-gray-600 focus:outline-none mx-4 sm:mx-0">
+                        <button
+                            onClick={() => dispatch(toggleCartSidebar(!cartIsOpen))}
+                            className="text-gray-600 focus:outline-none mx-4 sm:mx-0">
                             <svg
                                 className="h-5 w-5"
                                 fill="none"
@@ -45,6 +56,7 @@ const Header = () => {
 
                         <div className="flex sm:hidden">
                             <button
+                                onClick={() => setHeaderIsOpen((prevState) => !prevState)}
                                 type="button"
                                 className="text-gray-600 hover:text-gray-500 focus:outline-none focus:text-gray-500"
                                 aria-label="toggle menu">
@@ -57,23 +69,36 @@ const Header = () => {
                         </div>
                     </div>
                 </div>
-                <nav className="sm:flex sm:justify-center sm:items-center mt-4">
+                <nav
+                    className={`${
+                        headerIsOpen ? '' : 'hidden'
+                    } sm:flex sm:justify-center sm:items-center mt-4`}>
                     <div className="flex flex-col sm:flex-row">
-                        <a className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">
+                        <a className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="/">
                             Home
                         </a>
-                        <a className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">
+                        <a
+                            className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
+                            href="/shop">
                             Shop
                         </a>
-                        <a className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">
+                        <a
+                            className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
+                            href="/categories">
                             Categories
                         </a>
-                        <a className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">
+                        <a
+                            className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
+                            href="/contact">
                             Contact
                         </a>
-                        <a className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="#">
-                            About
-                        </a>
+                        <Link href="/about">
+                            <a
+                                className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
+                                href="/about">
+                                About
+                            </a>
+                        </Link>
                     </div>
                 </nav>
                 <div className="relative mt-6 max-w-lg mx-auto">

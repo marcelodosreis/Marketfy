@@ -1,11 +1,22 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { toggleCartSidebar } from '../../../../main/store/modules/cart/action';
 
 const Cart = () => {
+    const { isOpen } = useSelector((state) => state.cart);
+    const dispatch = useDispatch();
+
     return (
-        <div className="fixed right-0 top-0 max-w-xs w-full h-full px-6 py-4 transition duration-300 transform overflow-y-auto bg-white border-l-2 border-gray-300">
+        <div
+            className={`${
+                isOpen ? 'translate-x-0 ease-out' : 'translate-x-full ease-in'
+            } fixed right-0 top-0 max-w-xs w-full h-full px-6 py-4 transition duration-300 transform overflow-y-auto bg-white border-l-2 border-gray-300`}>
             <div className="flex items-center justify-between">
                 <h3 className="text-2xl font-medium text-gray-700">Your cart</h3>
-                <button className="text-gray-600 focus:outline-none">
+                <button
+                    onClick={() => dispatch(toggleCartSidebar(!isOpen))}
+                    className="text-gray-600 focus:outline-none">
                     <svg
                         className="h-5 w-5"
                         fill="none"
@@ -147,7 +158,9 @@ const Cart = () => {
                     </button>
                 </form>
             </div>
-            <a className="flex items-center justify-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+            <a
+                className="flex items-center justify-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500"
+                href="/">
                 <span>Chechout</span>
                 <svg
                     className="h-5 w-5 mx-2"
