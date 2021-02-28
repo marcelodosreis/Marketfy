@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { toggleCartSidebar } from '../../../../main/store/modules/cart/action';
 
 const Header = () => {
-    const { isOpen: cartIsOpen } = useSelector((state) => state.cart);
+    const { isOpen: cartIsOpen, hasNewProducts } = useSelector((state) => state.cart);
     const [headerIsOpen, setHeaderIsOpen] = useState(false);
     const dispatch = useDispatch();
 
@@ -57,7 +57,9 @@ const Header = () => {
                                     />
                                 </svg>
 
-                                <span className="absolute top-0 left-0 rounded-full bg-indigo-500 text-white p-1 text-xs"></span>
+                                {hasNewProducts && (
+                                    <span className="absolute top-0 left-0 rounded-full bg-indigo-500 text-white p-1 text-xs"></span>
+                                )}
                             </button>
                         </div>
 

@@ -4,3 +4,10 @@ export function toggleCartSidebar(status) {
         payload: status
     };
 }
+
+export function toggleNewProductNotification(status) {
+    return {
+        type: '@cart/TOGGLE_NEW_PRODUCT_NOTIFICATION',
+        payload: status
+    };
+}

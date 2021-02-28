@@ -5,7 +5,7 @@ import Router from 'next/router';
 import App from 'next/app';
 
 import Header from '../library/common/components/Header/Header';
-import Cart from '../library/common/components/Cart/Cart';
+import CartList from '../library/common/components/CartList/CartList';
 
 import CombineProviders from '../library/utilities/providers/index';
 
@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
     return (
         <CombineProviders>
             <Header />
-            <Cart />
+            <CartList />
             <Component {...pageProps} />
         </CombineProviders>
     );
