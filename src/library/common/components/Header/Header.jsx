@@ -28,7 +28,7 @@ const Header = ({ langProvider: { lang, updateLang } }) => {
         <header>
             <div className="container mx-auto px-6 py-3">
                 <div className="flex items-center justify-between">
-                    <div className="mr-4">
+                    <div className="sm:w-full sm:mr-0 mr-4 text-gray-600 md:flex md:items-center">
                         <Select
                             options={[
                                 {
@@ -46,10 +46,10 @@ const Header = ({ langProvider: { lang, updateLang } }) => {
                             ]}
                             onChange={(value) => updateLang(value)}
                         />
+                        <Badge icon={<GrLocation className="ml-14 h-5 w-5" />}>
+                            <span className="mx-1 text-sm">NY</span>
+                        </Badge>
                     </div>
-                    <Badge icon={<GrLocation className="h-5 w-5" />}>
-                        <span className="mx-1 text-sm">NY</span>
-                    </Badge>
 
                     <div className="w-full text-gray-700 md:text-center text-2xl font-semibold">
                         {locales[lang]['default-brand-name']}
