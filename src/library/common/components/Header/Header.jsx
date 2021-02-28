@@ -6,16 +6,20 @@ import Link from 'next/link';
 import { NavbarListConstants } from '@/library/common/constants/NavbarConstants';
 import { toggleCartSidebar } from '@/main/store/modules/cart/action';
 
+import Badge from '../Badge/Badge';
+import Select from '../Input/Select/Select';
+
 import { GrLocation, GrFormSearch } from 'react-icons/gr';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import Badge from '../Badge/Badge';
+
+import { withLang } from '@/library/utilities/providers/LanguageProvider/LanguageProvider';
 
 import locales from './_locales/locales.json';
 
 import PropTypes from 'prop-types';
 
-const Header = ({ lang }) => {
+const Header = ({ langProvider: { lang, updateLang } }) => {
     const { isOpen: cartIsOpen, hasNewProducts } = useSelector((state) => state.cart);
     const [headerIsOpen, setHeaderIsOpen] = useState(false);
     const dispatch = useDispatch();
@@ -24,6 +28,25 @@ const Header = ({ lang }) => {
         <header>
             <div className="container mx-auto px-6 py-3">
                 <div className="flex items-center justify-between">
+                    <div className="mr-4">
+                        <Select
+                            options={[
+                                {
+                                    value: 'pt-BR',
+                                    image: '/images/svg/brIcon.svg'
+                                },
+                                {
+                                    value: 'en-US',
+                                    image: '/images/svg/enIcon.svg'
+                                },
+                                {
+                                    value: 'es-ES',
+                                    image: '/images/svg/esIcon.svg'
+                                }
+                            ]}
+                            onChange={(value) => updateLang(value)}
+                        />
+                    </div>
                     <Badge icon={<GrLocation className="h-5 w-5" />}>
                         <span className="mx-1 text-sm">NY</span>
                     </Badge>
@@ -87,12 +110,11 @@ const Header = ({ lang }) => {
     );
 };
 
-export default Header;
+export default withLang(Header);
 
 Header.propTypes = {
-    lang: PropTypes.string.isRequired
-};
-
-Header.defaultProps = {
-    lang: 'pt-BR'
+    langProvider: PropTypes.shape({
+        lang: PropTypes.string.isRequired,
+        updateLang: PropTypes.func.isRequired
+    }).isRequired
 };

@@ -27,6 +27,11 @@ const LanguageProvider = ({ children }) => {
         if (!isValidLang(router?.query?.lang)) router.push(langParam, undefined, { shallow: true });
     }, [router.pathname]);
 
+    useEffect(() => {
+        const langParam = `?lang=${lang}`;
+        router.push(langParam, undefined, { shallow: true });
+    }, [lang]);
+
     return (
         <LanguageContext.Provider
             value={{
