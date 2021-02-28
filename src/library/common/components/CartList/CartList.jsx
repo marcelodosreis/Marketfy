@@ -5,7 +5,11 @@ import {
     toggleCartSidebar,
     toggleNewProductNotification
 } from '../../../../main/store/modules/cart/action';
+
+import Button from '../Button/Button';
 import CartItem from './CartItem/CartItem';
+
+import { BsArrowRight } from 'react-icons/bs';
 
 const CartList = () => {
     const { isOpen, cartList, hasNewProducts } = useSelector((state) => state.cart);
@@ -49,21 +53,7 @@ const CartList = () => {
                     </button>
                 </form>
             </div>
-            <a
-                className="flex items-center justify-center mt-4 px-3 py-2 bg-blue-600 text-white text-sm uppercase font-medium rounded hover:bg-blue-500 focus:outline-none focus:bg-blue-500"
-                href="/">
-                <span>Chechout</span>
-                <svg
-                    className="h-5 w-5 mx-2"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                </svg>
-            </a>
+            <Button icon={<BsArrowRight />}>Checkout</Button>
         </div>
     );
 };
