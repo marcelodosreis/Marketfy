@@ -1,0 +1,14 @@
+{
+    "pt-BR": {
+        "search-input": "Buscar",
+        "default-brand-name": "Marca"
+    },
+    "en-US": {
+        "search-input": "Search",
+        "default-brand-name": "Brand"
+    },
+    "es-ES": {
+        "search-input": "Buscar",
+        "default-brand-name": "Marca"
+    }
+}

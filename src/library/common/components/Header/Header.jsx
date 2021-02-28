@@ -9,8 +9,13 @@ import { toggleCartSidebar } from '@/main/store/modules/cart/action';
 import { GrLocation, GrFormSearch } from 'react-icons/gr';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import Badge from '../Badge/Badge';
 
-const Header = () => {
+import locales from './_locales/locales.json';
+
+import PropTypes from 'prop-types';
+
+const Header = ({ lang }) => {
     const { isOpen: cartIsOpen, hasNewProducts } = useSelector((state) => state.cart);
     const [headerIsOpen, setHeaderIsOpen] = useState(false);
     const dispatch = useDispatch();
@@ -19,12 +24,12 @@ const Header = () => {
         <header>
             <div className="container mx-auto px-6 py-3">
                 <div className="flex items-center justify-between">
-                    <div className="hidden w-full text-gray-600 md:flex md:items-center">
-                        <GrLocation className="h-5 w-5" />
+                    <Badge icon={<GrLocation className="h-5 w-5" />}>
                         <span className="mx-1 text-sm">NY</span>
-                    </div>
+                    </Badge>
+
                     <div className="w-full text-gray-700 md:text-center text-2xl font-semibold">
-                        Brand
+                        {locales[lang]['default-brand-name']}
                     </div>
                     <div className="flex items-center justify-end w-full">
                         <div className="flex justify-center md:block">
@@ -74,7 +79,7 @@ const Header = () => {
                     <input
                         className="w-full border rounded-md pl-10 pr-4 py-2 focus:border-blue-500 focus:outline-none focus:shadow-outline"
                         type="text"
-                        placeholder="Search"
+                        placeholder={locales[lang]['search-input']}
                     />
                 </div>
             </div>
@@ -83,3 +88,11 @@ const Header = () => {
 };
 
 export default Header;
+
+Header.propTypes = {
+    lang: PropTypes.string.isRequired
+};
+
+Header.defaultProps = {
+    lang: 'pt-BR'
+};

@@ -1,0 +1,14 @@
+{
+    "pt-BR": {
+        "cart-title": "Seu carinho",
+        "checkout": "Comprar"
+    },
+    "en-US": {
+        "cart-title": "Your checkout",
+        "checkout": "Checkout"
+    },
+    "es-ES": {
+        "cart-title": "Seu carinho",
+        "checkout": "Comprar"
+    }
+}

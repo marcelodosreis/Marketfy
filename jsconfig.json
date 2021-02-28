@@ -7,7 +7,7 @@
             "@/main/*": ["main/*"],
             "@/validation/*": ["validation/*"],
             // Sub-Folders
-            "@/components/*": ["library/common/components/*"],
+            "@/components/*": ["library/common/components/*"]
         }
     }
 }
