@@ -8,7 +8,7 @@ const LanguageConsumer = LanguageContext.Consumer;
 
 const LanguageProvider = ({ children }) => {
     const [lang, setLang] = useState('pt-BR');
-    const updateLanguage = (lang) => setLang(lang);
+    const updateLang = (lang) => setLang(lang);
 
     const isValidLang = (lang) => {
         const enableLangs = ['pt-BR'];
@@ -32,7 +32,7 @@ const LanguageProvider = ({ children }) => {
             value={{
                 langProvider: {
                     lang,
-                    updateLanguage: updateLanguage
+                    updateLang: updateLang
                 }
             }}>
             {children}
