@@ -2,7 +2,6 @@
     "compilerOptions": {
         "baseUrl": "./src",
         "paths": {
-            "@/constants/*": ["constants/*"],
             "@/infra/*": ["infra/*"],
             "@/library/*": ["library/*"],
             "@/main/*": ["main/*"],

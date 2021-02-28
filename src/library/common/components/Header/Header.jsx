@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import Link from 'next/link';
 
-import { NavbarListConstants } from '@/constants/navbar';
+import { NavbarListConstants } from '@/library/common/constants/NavbarConstants';
 import { toggleCartSidebar } from '@/main/store/modules/cart/action';
 
 import { GrLocation, GrFormSearch } from 'react-icons/gr';
