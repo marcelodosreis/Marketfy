@@ -5,6 +5,8 @@ import Link from 'next/link';
 
 import { toggleCartSidebar } from '../../../../main/store/modules/cart/action';
 
+import { NavbarListConstants } from '../../../../constants/navbar';
+
 import { GrLocation, GrFormSearch } from 'react-icons/gr';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { GiHamburgerMenu } from 'react-icons/gi';
@@ -54,31 +56,15 @@ const Header = () => {
                         headerIsOpen ? '' : 'hidden'
                     } sm:flex sm:justify-center sm:items-center mt-4`}>
                     <div className="flex flex-col sm:flex-row">
-                        <a className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0" href="/">
-                            Home
-                        </a>
-                        <a
-                            className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
-                            href="/shop">
-                            Shop
-                        </a>
-                        <a
-                            className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
-                            href="/categories">
-                            Categories
-                        </a>
-                        <a
-                            className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
-                            href="/contact">
-                            Contact
-                        </a>
-                        <Link href="/about">
-                            <a
-                                className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
-                                href="/about">
-                                About
-                            </a>
-                        </Link>
+                        {NavbarListConstants.map(({ id, name, pathname }) => (
+                            <Link key={id} href={pathname}>
+                                <a
+                                    className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
+                                    href="/">
+                                    {name}
+                                </a>
+                            </Link>
+                        ))}
                     </div>
                 </nav>
                 <div className="relative mt-6 max-w-lg mx-auto">
