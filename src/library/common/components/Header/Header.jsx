@@ -3,9 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import Link from 'next/link';
 
-import { toggleCartSidebar } from '../../../../main/store/modules/cart/action';
-
-import { NavbarListConstants } from '../../../../constants/navbar';
+import { NavbarListConstants } from '@/constants/navbar';
+import { toggleCartSidebar } from '@/main/store/modules/cart/action';
 
 import { GrLocation, GrFormSearch } from 'react-icons/gr';
 import { HiOutlineShoppingCart } from 'react-icons/hi';

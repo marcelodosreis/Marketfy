@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import Router from 'next/router';
 import App from 'next/app';
 
-import Header from '../library/common/components/Header/Header';
-import CartList from '../library/common/components/CartList/CartList';
+import Header from '@/library/common/components/Header/Header';
+import CartList from '@/library/common/components/CartList/CartList';
 
-import CombineProviders from '../library/utilities/providers/index';
+import CombineProviders from '@/library/utilities/providers/index';
 
 import 'tailwindcss/tailwind.css';
 

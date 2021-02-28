@@ -1,14 +1,11 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import {
-    toggleCartSidebar,
-    toggleNewProductNotification
-} from '../../../../main/store/modules/cart/action';
+import { toggleCartSidebar, toggleNewProductNotification } from '@/main/store/modules/cart/action';
 
-import Button from '../Button/Button';
-import CartItem from './CartItem/CartItem';
-import PromoteCode from './PromoteCode/PromoteCode';
+import Button from '@/components/Button/Button';
+import CartItem from '@/components/CartList/CartItem/CartItem';
+import PromoteCode from '@/components/CartList/PromoteCode/PromoteCode';
 
 import { BsArrowRight } from 'react-icons/bs';
 import { GrClose } from 'react-icons/gr';

@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": {
+            "@/constants/*": ["constants/*"],
+            "@/infra/*": ["infra/*"],
+            "@/library/*": ["library/*"],
+            "@/main/*": ["main/*"],
+            "@/validation/*": ["validation/*"],
+            // Sub-Folders
+            "@/components/*": ["library/common/components/*"],
+        }
+    }
+}

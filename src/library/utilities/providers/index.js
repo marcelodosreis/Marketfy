@@ -2,8 +2,8 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import ReduxProvider from './ReduxProvider/ReduxProvider';
-import LanguageProvider from './LanguageProvider/LanguageProvider';
+import ReduxProvider from '@/library/utilities/providers/ReduxProvider/ReduxProvider';
+import LanguageProvider from '@/library/utilities/providers/LanguageProvider/LanguageProvider';
 
 const CombineProviders = ({ children }) => {
     return (
