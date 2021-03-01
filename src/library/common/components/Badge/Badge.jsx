@@ -13,5 +13,5 @@ export default Badge;
 
 Badge.propTypes = {
     children: PropTypes.node.isRequired,
-    icon: PropTypes.node
+    icon: PropTypes.node.isRequired
 };
