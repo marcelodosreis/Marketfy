@@ -12,7 +12,6 @@ const Story = (props) => (
     </Badge>
 );
 
-// Here we export a variant of the default template passing props
 export const BadgeStory = Story.bind({});
 BadgeStory.args = {
     Badge: BadgeMock
@@ -20,8 +19,5 @@ BadgeStory.args = {
 
 export default {
     title: 'Components/Badge',
-    component: Badge,
-    argTypes: {
-        showImage: { control: 'boolean' }
-    }
+    component: Badge
 };
