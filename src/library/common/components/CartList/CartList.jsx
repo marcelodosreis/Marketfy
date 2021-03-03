@@ -10,11 +10,13 @@ import PromoteCode from '@/components/CartList/PromoteCode/PromoteCode';
 import { BsArrowRight } from 'react-icons/bs';
 import { GrClose } from 'react-icons/gr';
 
+import { withLang } from '@/library/utilities/providers/LanguageProvider/LanguageProvider';
+
 import locales from './_locales/locales.json';
 
 import PropTypes from 'prop-types';
 
-const CartList = ({ lang }) => {
+const CartList = ({ langProvider: { lang } }) => {
     const { isOpen, cartList, hasNewProducts } = useSelector((state) => state.cart);
     const dispatch = useDispatch();
 
@@ -47,12 +49,11 @@ const CartList = ({ lang }) => {
     );
 };
 
-export default CartList;
+export default withLang(CartList);
 
 CartList.propTypes = {
-    lang: PropTypes.string.isRequired
-};
-
-CartList.defaultProps = {
-    lang: 'pt-BR'
+    langProvider: PropTypes.shape({
+        lang: PropTypes.string.isRequired,
+        updateLang: PropTypes.func.isRequired
+    }).isRequired
 };

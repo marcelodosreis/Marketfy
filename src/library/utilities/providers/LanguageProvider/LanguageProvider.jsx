@@ -6,16 +6,17 @@ import { useRouter } from 'next/router';
 const LanguageContext = React.createContext();
 const LanguageConsumer = LanguageContext.Consumer;
 
+const isValidLang = (lang) => {
+    const enableLangs = ['pt-BR', 'en-US', 'es-ES'];
+    return enableLangs.includes(lang);
+};
+
 const LanguageProvider = ({ children }) => {
-    const [lang, setLang] = useState('pt-BR');
-    const updateLang = (lang) => setLang(lang);
-
-    const isValidLang = (lang) => {
-        const enableLangs = ['pt-BR'];
-        return enableLangs.includes(lang);
-    };
-
     const router = useRouter();
+    const [lang, setLang] = useState(
+        isValidLang(router?.query?.lang) ? router?.query?.lang : 'pt-BR'
+    );
+    const updateLang = (lang) => setLang(lang);
 
     useEffect(() => {
         const langParam = `?lang=${lang}`;
@@ -24,7 +25,6 @@ const LanguageProvider = ({ children }) => {
             router.push(langParam, undefined, { shallow: true });
             return;
         }
-        if (!isValidLang(router?.query?.lang)) router.push(langParam, undefined, { shallow: true });
     }, [router.pathname]);
 
     useEffect(() => {
