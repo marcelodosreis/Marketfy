@@ -7,7 +7,7 @@ import { NavbarListConstants } from '@/library/common/constants/NavbarConstants'
 import { toggleCartSidebar } from '@/main/store/modules/cart/action';
 
 import Badge from '../Badge/Badge';
-import Select from '../Input/Select/Select';
+import Select from '../Select/Select';
 
 import { GrLocation, GrFormSearch } from 'react-icons/gr';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
@@ -18,6 +18,12 @@ import { withLang } from '@/library/utilities/providers/LanguageProvider/Languag
 import locales from './_locales/locales.json';
 
 import PropTypes from 'prop-types';
+
+const langOptions = [
+    { value: 'pt-BR', icon: '/images/svg/brIcon.svg' },
+    { value: 'en-US', icon: '/images/svg/enIcon.svg' },
+    { value: 'es-ES', icon: '/images/svg/esIcon.svg' }
+];
 
 const Header = ({ langProvider: { lang, updateLang } }) => {
     const { isOpen: cartIsOpen, hasNewProducts } = useSelector((state) => state.cart);
@@ -30,21 +36,9 @@ const Header = ({ langProvider: { lang, updateLang } }) => {
                 <div className="flex items-center justify-between">
                     <div className="sm:w-full sm:mr-0 mr-4 text-gray-600 md:flex md:items-center">
                         <Select
-                            options={[
-                                {
-                                    value: 'pt-BR',
-                                    image: '/images/svg/brIcon.svg'
-                                },
-                                {
-                                    value: 'en-US',
-                                    image: '/images/svg/enIcon.svg'
-                                },
-                                {
-                                    value: 'es-ES',
-                                    image: '/images/svg/esIcon.svg'
-                                }
-                            ]}
-                            onChange={(value) => updateLang(value)}
+                            options={langOptions}
+                            selected={langOptions.find((c) => c.value === lang)}
+                            onSelect={(value) => updateLang(value)}
                         />
                         <Badge icon={<GrLocation className="ml-14 h-5 w-5" />}>
                             <span className="mx-1 text-sm">NY</span>
