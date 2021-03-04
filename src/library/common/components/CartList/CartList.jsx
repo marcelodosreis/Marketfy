@@ -43,7 +43,7 @@ const CartList = ({ langProvider: { lang } }) => {
             {cartList?.map(({ id, name, imageUrl, price }) => (
                 <CartItem key={id} name={name} imageUrl={imageUrl} price={price} />
             ))}
-            <PromoteCode />
+            <PromoteCode lang={lang} />
             <Button icon={<BsArrowRight className="h-5 w-5" />}>{locales[lang]['checkout']}</Button>
         </div>
     );
