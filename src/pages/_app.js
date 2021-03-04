@@ -6,6 +6,7 @@ import App from 'next/app';
 
 import Header from '@/library/common/components/Header/Header';
 import CartList from '@/library/common/components/CartList/CartList';
+import Footer from '@/library/common/components/Footer/Footer';
 
 import CombineProviders from '@/library/utilities/providers/index';
 
@@ -26,6 +27,7 @@ function MyApp({ Component, pageProps }) {
             <Header />
             <CartList />
             <Component {...pageProps} />
+            <Footer />
         </CombineProviders>
     );
 }
