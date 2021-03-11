@@ -1,6 +1,6 @@
 import React from 'react';
 
-import HomeFactory from '@/main/factories/home-factory/home-factory';
+import HomeContainer from '@/main/containers/home-container/home-container';
 export default function Home() {
-    return <HomeFactory />;
+    return <HomeContainer />;
 }
