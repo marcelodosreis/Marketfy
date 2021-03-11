@@ -4,7 +4,11 @@ import React from 'react';
 
 const ProductCard = () => (
     <div className="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
-        <div className="flex items-end justify-end h-56 w-full bg-cover">
+        <div
+            style={{
+                backgroundImage: `url('https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')`
+            }}
+            className="flex items-end justify-end h-56 w-full bg-cover">
             <button className="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                 <svg
                     className="h-5 w-5"
