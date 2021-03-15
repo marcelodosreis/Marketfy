@@ -1,15 +1,17 @@
 import React from 'react';
 
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-const ProductCard = () => (
+const ProductCard = ({ onClick, item }) => (
     <div className="w-full max-w-sm mx-auto rounded-md shadow-md overflow-hidden">
         <div
             style={{
                 backgroundImage: `url('https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')`
             }}
             className="flex items-end justify-end h-56 w-full bg-cover">
-            <button className="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+            <button
+                onClick={() => onClick()}
+                className="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
                 <svg
                     className="h-5 w-5"
                     fill="none"
@@ -23,12 +25,14 @@ const ProductCard = () => (
             </button>
         </div>
         <div className="px-5 py-3">
-            <h3 className="text-gray-700 uppercase">Chanel</h3>
-            <span className="text-gray-500 mt-2">$12</span>
+            <h3 className="text-gray-700 uppercase">{item.name}</h3>
+            <span className="text-gray-500 mt-2">${item.price}</span>
         </div>
     </div>
 );
 
 export default ProductCard;
 
-ProductCard.propTypes = {};
+ProductCard.propTypes = {
+    onClick: PropTypes.func.isRequired
+};

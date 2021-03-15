@@ -1,9 +1,33 @@
+import React from 'react';
+
+import { useDispatch } from 'react-redux';
+
 import ImageCard from '@/library/common/components/ImageCard/ImageCard';
 import ProductCard from '@/library/common/components/ProductCard/ProductCard';
-import React from 'react';
+
+import { startAddProductInCart } from '@/main/store/modules/cart/action';
 
 // import PropTypes from 'prop-types';
 export default function HomeContainer() {
+    const dispatch = useDispatch();
+
+    const CartMock = {
+        1: {
+            id: 1,
+            name: 'Macbook Pro 2021',
+            imageUrl:
+                'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80',
+            price: 2000
+        },
+        2: {
+            id: 2,
+            name: 'iPhone 12',
+            imageUrl:
+                'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80',
+            price: 1000
+        }
+    };
+
     return (
         <main className="my-8">
             <div className="container mx-auto px-6">
@@ -37,16 +61,24 @@ export default function HomeContainer() {
                 <div className="mt-16">
                     <h3 className="text-gray-600 text-2xl font-medium">Section One</h3>
                     <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
-                        {[1, 2, 3, 4].map((item) => (
-                            <ProductCard key={item} />
+                        {Object.values(CartMock).map((item) => (
+                            <ProductCard
+                                onClick={() => dispatch(startAddProductInCart(item))}
+                                key={item.id}
+                                item={item}
+                            />
                         ))}
                     </div>
                 </div>
                 <div className="mt-16">
                     <h3 className="text-gray-600 text-2xl font-medium">Section Two</h3>
                     <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
-                        {[1, 2, 3, 4].map((item) => (
-                            <ProductCard key={item} />
+                        {Object.values(CartMock).map((item) => (
+                            <ProductCard
+                                onClick={() => dispatch(startAddProductInCart(item))}
+                                key={item.id}
+                                item={item}
+                            />
                         ))}
                     </div>
                 </div>
