@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import PropTypes from 'prop-types';
 
-import { addCartItem } from '@/main/store/modules/cart/action';
+import { addCartItem, removeCartItem } from '@/main/store/modules/cart/action';
 
 import { BsPlusCircle, BsDashCircle } from 'react-icons/bs';
 
@@ -18,7 +18,9 @@ const QuantityButton = ({ item }) => {
                 <BsPlusCircle className="h-5 w-5" />
             </button>
             <span className="text-gray-700 mx-2">{item.quantity}</span>
-            <button className="text-gray-500 focus:outline-none focus:text-gray-600">
+            <button
+                onClick={() => dispatch(removeCartItem(item))}
+                className="text-gray-500 focus:outline-none focus:text-gray-600">
                 <BsDashCircle className="h-5 w-5" />
             </button>
         </div>

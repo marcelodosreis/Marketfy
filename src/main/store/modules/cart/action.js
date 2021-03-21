@@ -12,10 +12,17 @@ export function toggleNewProductNotification(status) {
     };
 }
 
-export function addCartItem(productId) {
+export function addCartItem(product) {
     return {
         type: '@cart/ADD_CART_ITEM',
-        payload: productId
+        payload: product
+    };
+}
+
+export function removeCartItem(product) {
+    return {
+        type: '@cart/REMOVE_CART_ITEM',
+        payload: product
     };
 }
 

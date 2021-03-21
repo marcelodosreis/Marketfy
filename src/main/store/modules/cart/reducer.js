@@ -24,6 +24,9 @@ export default function cart(state = INITIAL_STATE, action) {
         case '@cart/ADD_CART_ITEM': {
             return { ...state };
         }
+        case '@cart/REMOVE_CART_ITEM': {
+            return { ...state };
+        }
         case '@cart/UPDATE_CART_ITEMS': {
             // return { ...state };
             return { ...state, items: action.payload };

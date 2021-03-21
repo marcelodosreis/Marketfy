@@ -13,9 +13,25 @@ export function* addCartItem({ payload }) {
             quantity: isProductInCart?.quantity ? isProductInCart.quantity + 1 : 1
         }
     };
-    console.log(updatedCart);
     yield put(toggleNewProductNotification(true));
     yield put(updateCartItems(updatedCart));
 }
 
-export default all([takeLatest('@cart/ADD_CART_ITEM', addCartItem)]);
+export function* removeCartItem({ payload }) {
+    const { items } = yield select((state) => state.cart);
+
+    const productQuantity = items[payload.id].quantity;
+    const cartClone = Object.assign({}, items);
+
+    if (productQuantity <= 1) {
+        delete cartClone[payload.id];
+    } else {
+        cartClone[payload.id].quantity === --cartClone[payload.id].quantity;
+    }
+    yield put(updateCartItems(cartClone));
+}
+
+export default all([
+    takeLatest('@cart/ADD_CART_ITEM', addCartItem),
+    takeLatest('@cart/REMOVE_CART_ITEM', removeCartItem)
+]);
