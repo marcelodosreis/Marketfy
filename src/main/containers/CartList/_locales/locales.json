@@ -1,14 +1,17 @@
 {
     "pt-BR": {
-        "cart-title": "Seu carinho",
-        "checkout": "Comprar"
+        "CART_TITLE": "Seu carinho",
+        "CHECKOUT": "Comprar",
+        "EMPTY_CART": "Seu carrinho esta vazio :("
     },
     "en-US": {
-        "cart-title": "Your checkout",
-        "checkout": "Checkout"
+        "CART_TITLE": "Your checkout",
+        "CHECKOUT": "Checkout",
+        "EMPTY_CART": "Your cart is empty :("
     },
     "es-ES": {
-        "cart-title": "Seu carinho",
-        "checkout": "Comprar"
+        "CART_TITLE": "Seu carinho",
+        "CHECKOUT": "Comprar",
+        "EMPTY_CART": "Su carrito está vacío :("
     }
 }
