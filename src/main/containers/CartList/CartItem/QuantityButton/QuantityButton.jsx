@@ -1,23 +1,37 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 import PropTypes from 'prop-types';
 
+import { addCartItem } from '@/main/store/modules/cart/action';
+
 import { BsPlusCircle, BsDashCircle } from 'react-icons/bs';
 
-const QuantityButton = ({ quantity }) => (
-    <div className="flex items-center mt-2">
-        <button className="text-gray-500 focus:outline-none focus:text-gray-600">
-            <BsPlusCircle className="h-5 w-5" />
-        </button>
-        <span className="text-gray-700 mx-2">{quantity}</span>
-        <button className="text-gray-500 focus:outline-none focus:text-gray-600">
-            <BsDashCircle className="h-5 w-5" />
-        </button>
-    </div>
-);
+const QuantityButton = ({ item }) => {
+    const dispatch = useDispatch();
+
+    return (
+        <div className="flex items-center mt-2">
+            <button
+                onClick={() => dispatch(addCartItem(item))}
+                className="text-gray-500 focus:outline-none focus:text-gray-600">
+                <BsPlusCircle className="h-5 w-5" />
+            </button>
+            <span className="text-gray-700 mx-2">{item.quantity}</span>
+            <button className="text-gray-500 focus:outline-none focus:text-gray-600">
+                <BsDashCircle className="h-5 w-5" />
+            </button>
+        </div>
+    );
+};
 
 export default QuantityButton;
 
 QuantityButton.propTypes = {
-    quantity: PropTypes.number.isRequired
+    item: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        imageUrl: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        quantity: PropTypes.number.isRequired
+    }).isRequired
 };

@@ -13,6 +13,7 @@ export function* addCartItem({ payload }) {
             quantity: isProductInCart?.quantity ? isProductInCart.quantity + 1 : 1
         }
     };
+    console.log(updatedCart);
     yield put(toggleNewProductNotification(true));
     yield put(updateCartItems(updatedCart));
 }

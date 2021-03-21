@@ -40,15 +40,7 @@ const CartList = ({ langProvider: { lang } }) => {
                 </button>
             </div>
             <hr className="my-3" />
-            {Object.values(items).map(({ id, name, imageUrl, price, quantity }) => (
-                <CartItem
-                    key={id}
-                    name={name}
-                    imageUrl={imageUrl}
-                    price={price}
-                    quantity={quantity}
-                />
-            ))}
+            {items && Object.values(items).map((item) => <CartItem key={item.id} item={item} />)}
 
             <PromoteCode lang={lang} />
             <Button icon={<BsArrowRight className="h-5 w-5" />}>{locales[lang]['checkout']}</Button>
