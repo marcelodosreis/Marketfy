@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import Router from 'next/router';
 import App from 'next/app';
 
-import Header from '@/library/common/components/Header/Header';
-import CartList from '@/library/common/components/CartList/CartList';
+import Header from '@/main/containers/Header/Header';
 import Footer from '@/library/common/components/Footer/Footer';
+import CartList from '@/main/containers/CartList/CartList';
 
 import CombineProviders from '@/library/utilities/providers/index';
 

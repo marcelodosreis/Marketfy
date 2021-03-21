@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { NavbarListConstants } from '@/library/common/constants/NavbarConstants';
 import { toggleCartSidebar } from '@/main/store/modules/cart/action';
 
-import Badge from '../Badge/Badge';
-import Select from '../Select/Select';
+import Badge from '@/components/Badge/Badge';
+import Select from '@/components/Select/Select';
 
 import { GrLocation, GrFormSearch } from 'react-icons/gr';
 import { HiOutlineShoppingCart } from 'react-icons/hi';

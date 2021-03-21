@@ -1,7 +1,7 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
-import QuantityButton from '@/components/CartList/CartItem/QuantityButton/QuantityButton';
+import QuantityButton from '@/main/containers/CartList/CartItem/QuantityButton/QuantityButton';
 
 const CartItem = ({ name, imageUrl, price, quantity }) => (
     <div className="flex justify-between mt-6">
