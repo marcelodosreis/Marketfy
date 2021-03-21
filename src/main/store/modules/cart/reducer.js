@@ -1,7 +1,7 @@
 const INITIAL_STATE = {
     isOpen: false,
     hasNewProducts: true,
-    cartItems: {
+    items: {
         1: {
             id: 1,
             name: 'Macbook Pro 2021',
@@ -21,12 +21,12 @@ export default function cart(state = INITIAL_STATE, action) {
         case '@cart/TOGGLE_NEW_PRODUCT_NOTIFICATION': {
             return { ...state, hasNewProducts: action.payload };
         }
-        case '@cart/START_ADD_PRODUCT_IN_CART': {
+        case '@cart/ADD_CART_ITEM': {
             return { ...state };
         }
-        case '@cart/SUCCESS_ADD_PRODUCT_IN_CART': {
+        case '@cart/UPDATE_CART_ITEMS': {
             // return { ...state };
-            return { ...state, cartItems: { ...state.cartItems, ...action.payload } };
+            return { ...state, items: action.payload };
         }
 
         default:

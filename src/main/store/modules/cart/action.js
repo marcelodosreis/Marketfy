@@ -12,16 +12,16 @@ export function toggleNewProductNotification(status) {
     };
 }
 
-export function startAddProductInCart(product) {
+export function addCartItem(product) {
     return {
-        type: '@cart/START_ADD_PRODUCT_IN_CART',
+        type: '@cart/ADD_CART_ITEM',
         payload: product
     };
 }
 
-export function successAddProductInCart(product) {
+export function updateCartItems(product) {
     return {
-        type: '@cart/SUCCESS_ADD_PRODUCT_IN_CART',
+        type: '@cart/UPDATE_CART_ITEMS',
         payload: product
     };
 }

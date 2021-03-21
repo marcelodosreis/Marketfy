@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import ImageCard from '@/library/common/components/ImageCard/ImageCard';
 import ProductCard from '@/library/common/components/ProductCard/ProductCard';
 
-import { startAddProductInCart } from '@/main/store/modules/cart/action';
+import { addCartItem } from '@/main/store/modules/cart/action';
 
 // import PropTypes from 'prop-types';
 export default function HomeContainer() {
@@ -63,7 +63,7 @@ export default function HomeContainer() {
                     <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
                         {Object.values(CartMock).map((item) => (
                             <ProductCard
-                                onClick={() => dispatch(startAddProductInCart(item))}
+                                onClick={() => dispatch(addCartItem(item))}
                                 key={item.id}
                                 item={item}
                             />
@@ -75,7 +75,7 @@ export default function HomeContainer() {
                     <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-6">
                         {Object.values(CartMock).map((item) => (
                             <ProductCard
-                                onClick={() => dispatch(startAddProductInCart(item))}
+                                onClick={() => dispatch(addCartItem(item))}
                                 key={item.id}
                                 item={item}
                             />

@@ -1,19 +1,20 @@
 import { all, takeLatest, select, put } from 'redux-saga/effects';
-import { successAddProductInCart } from '@/main/store/modules/cart/action';
+import { updateCartItems, toggleNewProductNotification } from '@/main/store/modules/cart/action';
 
-export function* addProduct({ payload }) {
-    const { cartItems } = yield select((state) => state.cart);
+export function* addCartItem({ payload }) {
+    const { items } = yield select((state) => state.cart);
 
-    const isProductInCart = cartItems[payload.id];
+    const isProductInCart = items[payload.id];
 
-    yield put(
-        successAddProductInCart({
-            [payload.id]: {
-                ...payload,
-                quantity: isProductInCart?.quantity ? isProductInCart.quantity + 1 : 1
-            }
-        })
-    );
+    const updatedCart = {
+        ...items,
+        [payload.id]: {
+            ...payload,
+            quantity: isProductInCart?.quantity ? isProductInCart.quantity + 1 : 1
+        }
+    };
+    yield put(toggleNewProductNotification(true));
+    yield put(updateCartItems(updatedCart));
 }
 
-export default all([takeLatest('@cart/START_ADD_PRODUCT_IN_CART', addProduct)]);
+export default all([takeLatest('@cart/ADD_CART_ITEM', addCartItem)]);

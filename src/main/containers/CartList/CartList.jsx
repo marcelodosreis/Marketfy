@@ -17,7 +17,7 @@ import locales from './_locales/locales.json';
 import PropTypes from 'prop-types';
 
 const CartList = ({ langProvider: { lang } }) => {
-    const { isOpen, cartItems, hasNewProducts } = useSelector((state) => state.cart);
+    const { isOpen, items, hasNewProducts } = useSelector((state) => state.cart);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -40,7 +40,7 @@ const CartList = ({ langProvider: { lang } }) => {
                 </button>
             </div>
             <hr className="my-3" />
-            {Object.values(cartItems).map(({ id, name, imageUrl, price, quantity }) => (
+            {Object.values(items).map(({ id, name, imageUrl, price, quantity }) => (
                 <CartItem
                     key={id}
                     name={name}
