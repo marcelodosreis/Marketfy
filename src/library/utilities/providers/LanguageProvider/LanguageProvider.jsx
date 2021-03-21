@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
+import { LanguageConstants } from '@/library/common/constants/LanguageConstants';
+
 import { useRouter } from 'next/router';
 
 const LanguageContext = React.createContext();
 const LanguageConsumer = LanguageContext.Consumer;
 
 const isValidLang = (lang) => {
-    const enableLangs = ['pt-BR', 'en-US', 'es-ES'];
+    const enableLangs = LanguageConstants;
     return enableLangs.includes(lang);
 };
 
