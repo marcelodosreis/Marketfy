@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import ImageCard from '@/library/common/components/ImageCard/ImageCard';
 import ProductCard from '@/library/common/components/ProductCard/ProductCard';
 
-import { addCartItem } from '@/main/store/modules/cart/action';
+import { addCartItem } from 'redux/modules/cart/action';
 
 // import PropTypes from 'prop-types';
 export default function HomeContainer() {

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { toggleCartSidebar, toggleNewProductNotification } from '@/main/store/modules/cart/action';
+import { toggleCartSidebar, toggleNewProductNotification } from 'redux/modules/cart/action';
 
 import Button from '@/components/Button/Button';
 import PromoteCode from '@/main/containers/CartList/PromoteCode/PromoteCode';

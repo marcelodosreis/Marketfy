@@ -1,5 +1,5 @@
 import { all, takeLatest, select, put } from 'redux-saga/effects';
-import { updateCartItems, toggleNewProductNotification } from '@/main/store/modules/cart/action';
+import { updateCartItems, toggleNewProductNotification } from 'redux/modules/cart/action';
 
 export function* addCartItem({ payload }) {
     const { items } = yield select((state) => state.cart);
