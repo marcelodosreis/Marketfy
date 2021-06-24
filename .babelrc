@@ -1,0 +1,46 @@
+{
+    "env": {
+        "development": {
+            "plugins": [
+                ["styled-components", { "ssr": true, "displayName": true, "preprocess": false }],
+                [
+                    "babel-plugin-module-resolver",
+                    {
+                        "root": ["./src"],
+                        "alias": {
+                            "infra/*": ["infra/*"],
+                            "library/*": ["library/*"],
+                            "main/*": ["main/*"],
+                            "resources/*": ["resources/*"],
+                            "store/*": ["store/*"],
+                            // Sub-Folders
+                            "components/*": ["library/common/components/*"]
+                        }
+                    }
+                ]
+            ]
+        },
+        "production": {
+            "plugins": [
+                ["styled-components", { "ssr": true, "displayName": true, "preprocess": false }],
+                [
+                    "babel-plugin-module-resolver",
+                    {
+                        "root": ["./src"],
+                        "alias": {
+                            "infra/*": ["infra/*"],
+                            "library/*": ["library/*"],
+                            "main/*": ["main/*"],
+                            "resources/*": ["resources/*"],
+                            "store/*": ["store/*"],
+                            // Sub-Folders
+                            "components/*": ["library/common/components/*"]
+                        }
+                    }
+                ]
+            ]
+        }
+    },
+    "plugins": [["styled-components", { "ssr": true, "displayName": true, "preprocess": false }]],
+    "presets": ["next/babel"]
+}

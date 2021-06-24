@@ -9,7 +9,10 @@
         "lint": "eslint --fix .",
         "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
         "storybook": "start-storybook -p 6006",
-        "storybook:build": "build-storybook"
+        "storybook:build": "build-storybook",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage"
     },
     "dependencies": {
         "autoprefixer": "^9.8.6",
@@ -26,11 +29,16 @@
         "redux-saga": "^1.1.3"
     },
     "devDependencies": {
+        "@babel/preset-env": "^7.14.7",
         "@storybook/addon-actions": "^6.1.20",
         "@storybook/addon-essentials": "^6.1.20",
         "@storybook/addon-links": "^6.1.20",
         "@storybook/react": "^6.1.20",
         "@tailwindcss/postcss7-compat": "^2.0.3",
+        "@testing-library/jest-dom": "^5.14.1",
+        "@testing-library/react": "^12.0.0",
+        "babel-plugin-module-resolver": "^4.1.0",
+        "babel-plugin-styled-components": "^1.12.0",
         "dotenv": "^8.2.0",
         "eslint": "^7.20.0",
         "eslint-config-prettier": "^7.2.0",
@@ -38,6 +46,7 @@
         "eslint-plugin-prettier": "^3.3.1",
         "eslint-plugin-react": "^7.22.0",
         "eslint-plugin-react-hooks": "^4.2.0",
+        "jest": "^27.0.5",
         "prettier": "^2.2.1",
         "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.3"
     }

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import PropTypes from 'prop-types';
 
-import { addCartItem, removeCartItem } from 'redux/modules/cart/action';
+import { addCartItem, removeCartItem } from 'store/modules/cart/action';
 
 import { BsPlusCircle, BsDashCircle } from 'react-icons/bs';
 

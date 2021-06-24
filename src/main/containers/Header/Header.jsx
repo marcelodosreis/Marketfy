@@ -3,18 +3,18 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import Link from 'next/link';
 
-import { NavbarListConstants } from '@/library/common/constants/NavbarConstants';
-import { toggleCartSidebar } from 'redux/modules/cart/action';
+import { NavbarListConstants } from 'library/common/constants/NavbarConstants';
+import { toggleCartSidebar } from 'store/modules/cart/action';
 
-import Badge from '@/components/Badge/Badge';
-import Select from '@/components/Select/Select';
+import Badge from 'components/Badge/Badge';
+import Select from 'components/Select/Select';
 
 import { GrLocation, GrFormSearch } from 'react-icons/gr';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
-import { withLang } from '@/library/utilities/providers/LanguageProvider/LanguageProvider';
-import useAuth from '@/library/utilities/hooks/useAuth';
+import { withLang } from 'library/utilities/providers/LanguageProvider/LanguageProvider';
+import useAuth from 'library/utilities/hooks/useAuth';
 
 import locales from './_locales/locales.json';
 

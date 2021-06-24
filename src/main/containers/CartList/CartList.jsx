@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { toggleCartSidebar, toggleNewProductNotification } from 'redux/modules/cart/action';
+import { toggleCartSidebar, toggleNewProductNotification } from 'store/modules/cart/action';
 
-import Button from '@/components/Button/Button';
-import PromoteCode from '@/main/containers/CartList/PromoteCode/PromoteCode';
-import CartItem from '@/main/containers/CartList/CartItem/CartItem';
+import Button from 'components/Button/Button';
+import PromoteCode from 'main/containers/CartList/PromoteCode/PromoteCode';
+import CartItem from 'main/containers/CartList/CartItem/CartItem';
 
 import { BsArrowRight } from 'react-icons/bs';
 import { GrClose } from 'react-icons/gr';
 
-import { withLang } from '@/library/utilities/providers/LanguageProvider/LanguageProvider';
+import { withLang } from 'library/utilities/providers/LanguageProvider/LanguageProvider';
 
 import locales from './_locales/locales.json';
 

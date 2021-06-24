@@ -2,12 +2,13 @@
     "compilerOptions": {
         "baseUrl": "./src",
         "paths": {
-            "@/infra/*": ["infra/*"],
-            "@/library/*": ["library/*"],
-            "@/main/*": ["main/*"],
-            "@/validation/*": ["validation/*"],
+            "infra/*": ["infra/*"],
+            "library/*": ["library/*"],
+            "main/*": ["main/*"],
+            "resources/*": ["resources/*"],
+            "store/*": ["store/*"],
             // Sub-Folders
-            "@/components/*": ["library/common/components/*"]
+            "components/*": ["library/common/components/*"]
         }
     }
 }
