@@ -28,7 +28,7 @@ const langOptions = [
 
 const Header = ({ langProvider: { lang, updateLang } }) => {
     const { isOpen: cartIsOpen, hasNewProducts } = useSelector((state) => state.cart);
-    const { signinGoogle, signout, user } = useAuth();
+    const { signinGoogle, user } = useAuth();
     const [headerIsOpen, setHeaderIsOpen] = useState(false);
     const dispatch = useDispatch();
 
@@ -50,7 +50,16 @@ const Header = ({ langProvider: { lang, updateLang } }) => {
                     <div className="w-full text-gray-700 md:text-center text-2xl font-semibold">
                         {locales[lang]['default-brand-name']}
                     </div>
+
                     <div className="flex items-center justify-end w-full">
+                        <div className="flex justify-center md:block">
+                            <button
+                                className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
+                                onClick={() => signinGoogle()}>
+                                {user?.token ? user?.name?.split(' ')[0] : 'Login'}
+                            </button>
+                        </div>
+
                         <div className="flex justify-center md:block">
                             <button
                                 onClick={() => dispatch(toggleCartSidebar(!cartIsOpen))}
@@ -88,21 +97,6 @@ const Header = ({ langProvider: { lang, updateLang } }) => {
                                 </a>
                             </Link>
                         ))}
-
-                        <p>
-                            <button
-                                className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
-                                onClick={() => signinGoogle()}>
-                                {user?.token ? user?.name?.split(' ')[0] : 'Login'}
-                            </button>
-                        </p>
-                        <p>
-                            <button
-                                className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
-                                onClick={() => signout()}>
-                                Sair
-                            </button>
-                        </p>
                     </div>
                 </nav>
                 <div className="relative mt-6 max-w-lg mx-auto">
