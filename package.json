@@ -13,6 +13,8 @@
     },
     "dependencies": {
         "autoprefixer": "^9.8.6",
+        "firebase": "^8.6.8",
+        "js-cookie": "^2.2.1",
         "next": "^10.0.0",
         "nprogress": "^0.2.0",
         "postcss": "^7.0.35",

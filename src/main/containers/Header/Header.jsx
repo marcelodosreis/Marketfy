@@ -14,6 +14,7 @@ import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 import { withLang } from '@/library/utilities/providers/LanguageProvider/LanguageProvider';
+import useAuth from '@/library/utilities/hooks/useAuth';
 
 import locales from './_locales/locales.json';
 
@@ -27,6 +28,7 @@ const langOptions = [
 
 const Header = ({ langProvider: { lang, updateLang } }) => {
     const { isOpen: cartIsOpen, hasNewProducts } = useSelector((state) => state.cart);
+    const { signinGoogle, signout, user } = useAuth();
     const [headerIsOpen, setHeaderIsOpen] = useState(false);
     const dispatch = useDispatch();
 
@@ -86,6 +88,21 @@ const Header = ({ langProvider: { lang, updateLang } }) => {
                                 </a>
                             </Link>
                         ))}
+
+                        <p>
+                            <button
+                                className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
+                                onClick={() => signinGoogle()}>
+                                {user?.token ? user?.name?.split(' ')[0] : 'Login'}
+                            </button>
+                        </p>
+                        <p>
+                            <button
+                                className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
+                                onClick={() => signout()}>
+                                Sair
+                            </button>
+                        </p>
                     </div>
                 </nav>
                 <div className="relative mt-6 max-w-lg mx-auto">
