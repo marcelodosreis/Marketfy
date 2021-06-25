@@ -52,7 +52,7 @@ const Header = ({ langProvider: { lang, updateLang } }) => {
                     </div>
 
                     <div className="flex items-center justify-end w-full">
-                        <div className="flex justify-center md:block">
+                        <div className="justify-center hidden md:block">
                             <button
                                 className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
                                 onClick={() => signinGoogle()}>
@@ -88,6 +88,11 @@ const Header = ({ langProvider: { lang, updateLang } }) => {
                         headerIsOpen ? '' : 'hidden'
                     } sm:flex sm:justify-center sm:items-center mt-4`}>
                     <div className="flex flex-col sm:flex-row">
+                        <a
+                            className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0 md:hidden"
+                            onClick={() => signinGoogle()}>
+                            {user?.token ? user?.name?.split(' ')[0] : 'Login'}
+                        </a>
                         {NavbarListConstants.map(({ id, name, pathname }) => (
                             <Link key={id} href={pathname}>
                                 <a

@@ -52,7 +52,7 @@ const Select = ({ selected, options, onSelect }) => {
                 </button>
 
                 {isOpen && (
-                    <div className="absolute mt-1 w-full rounded-md bg-white shadow-lg">
+                    <div className="z-10 absolute mt-1 w-full rounded-md bg-white shadow-lg">
                         <ul
                             tabIndex={-1}
                             role="listbox"

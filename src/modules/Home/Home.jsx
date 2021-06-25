@@ -2,8 +2,8 @@ import React from 'react';
 
 import { useDispatch } from 'react-redux';
 
-import ImageCard from 'library/common/components/ImageCard/ImageCard';
-import ProductCard from 'library/common/components/ProductCard/ProductCard';
+import ImageCard from 'components/ImageCard/ImageCard';
+import ProductCard from 'components/ProductCard/ProductCard';
 
 import { addCartItem } from 'store/modules/cart/action';
 
