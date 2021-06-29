@@ -20,7 +20,8 @@ const ProductCard = ({ onClick, item }) => {
                 className="flex items-end justify-end h-56 w-full bg-cover">
                 <button
                     onClick={() => onClick()}
-                    className="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
+                    className="p-2 rounded-full bg-blue-600 text-white mx-5 -mb-4 hover:bg-blue-500 focus:outline-none focus:bg-blue-500"
+                    data-testid="button_product_card">
                     <svg
                         className="h-5 w-5"
                         fill="none"
@@ -34,14 +35,8 @@ const ProductCard = ({ onClick, item }) => {
                 </button>
             </div>
             <div className="flex flex-col px-5 py-3">
-                <Link
-                    href={{
-                        pathname: urlPath(item?.name, item?.id),
-                        query: { ...router.query }
-                    }}>
-                    {item.name}
-                </Link>
-                <span className="text-gray-500 mt-2">${item.price}</span>
+                <p onClick={() => router.push(urlPath(item?.name, item?.id))}>{item?.name}</p>
+                <span className="text-gray-500 mt-2">${item?.price}</span>
             </div>
         </div>
     );
