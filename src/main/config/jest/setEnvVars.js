@@ -1,0 +1,1 @@
+process.env.environment = 'test';

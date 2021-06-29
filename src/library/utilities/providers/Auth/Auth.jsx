@@ -67,6 +67,7 @@ export function AuthProvider({ children }) {
     };
 
     useEffect(() => {
+        if (process?.env?.environment === 'test') return;
         const unsubscribe = firebase.auth().onIdTokenChanged(handleUser);
         return () => unsubscribe();
     }, []);

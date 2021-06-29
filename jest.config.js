@@ -15,6 +15,7 @@ module.exports = {
     ],
 
     setupFilesAfterEnv: ['<rootDir>/src/main/config/jest/setupTests.js'],
+    setupFiles: ['<rootDir>/src/main/config/jest/setEnvVars.js'],
 
     testPathIgnorePatterns: ['/node_modules/', '/.next/', '/coverage/'],
 
