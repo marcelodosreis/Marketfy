@@ -8,7 +8,7 @@ const Story = (props) => <Footer {...props} />;
 
 export const FooterStory = Story.bind({});
 FooterStory.args = {
-    Footer: FooterMock
+    ...FooterMock
 };
 
 export default {

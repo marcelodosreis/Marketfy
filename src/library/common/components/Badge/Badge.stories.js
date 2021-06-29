@@ -4,17 +4,16 @@ import Badge from './Badge';
 
 import { GrLocation } from 'react-icons/gr';
 
-const BadgeMock = {};
+const BadgeMock = {
+    icon: <GrLocation className="h-5 w-5" />
+};
 
-const Story = (props) => (
-    <Badge {...props} icon={<GrLocation className="h-5 w-5" />}>
-        Badge Example
-    </Badge>
-);
+const Story = (props) => <Badge {...props}>Badge Example</Badge>;
 
 export const BadgeStory = Story.bind({});
+
 BadgeStory.args = {
-    Badge: BadgeMock
+    ...BadgeMock
 };
 
 export default {
