@@ -24,16 +24,19 @@ const Select = ({ selected, options, onSelect }) => {
                     aria-haspopup="listbox"
                     aria-expanded="true"
                     aria-labelledby="listbox-label"
-                    className="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    className="relative w-full bg-white border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-pointer focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    data-testid="select">
                     <span className="flex items-center">
-                        {selected.icon && (
+                        {selected?.icon && (
                             <img
-                                src={selected.icon}
+                                src={selected?.icon}
                                 alt=""
                                 className="flex-shrink-0 h-6 w-6 rounded-full"
                             />
                         )}
-                        <span className="ml-3 block truncate">{selected.label}</span>
+                        <span className="ml-3 block truncate" data-testid="select-value">
+                            {selected?.label}
+                        </span>
                     </span>
                     <span className="ml-3 absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
                         <svg
@@ -58,13 +61,15 @@ const Select = ({ selected, options, onSelect }) => {
                             role="listbox"
                             aria-labelledby="listbox-label"
                             aria-activedescendant="listbox-item-3"
-                            className="max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm">
+                            className="max-h-56 rounded-md py-1 text-base ring-1 ring-black ring-opacity-5 overflow-auto focus:outline-none sm:text-sm"
+                            data-testid="select-options-list">
                             {options.map((option, index) => (
                                 <li
                                     key={index}
                                     onClick={() => handleSelect(option.value)}
                                     id="listbox-item-0"
-                                    className="text-gray-900 hover:bg-purple-200  cursor-default select-none relative py-2 pl-3 pr-9 cursor-pointer">
+                                    className="text-gray-900 hover:bg-purple-200  cursor-default select-none relative py-2 pl-3 pr-9 cursor-pointer"
+                                    data-testid={`select-options-${option.value}`}>
                                     <div className="flex items-center">
                                         {option.icon && (
                                             <img
@@ -78,7 +83,7 @@ const Select = ({ selected, options, onSelect }) => {
                                             {option.label}
                                         </span>
                                     </div>
-                                    {option.value === selected.value && (
+                                    {option.value === selected?.value && (
                                         <span className="absolute inset-y-0 right-0 flex items-center pr-4">
                                             <svg
                                                 className="h-5 w-5"
