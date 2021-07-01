@@ -74,7 +74,7 @@ const Select = ({ selected, options, onSelect }) => {
                                         {option.icon && (
                                             <img
                                                 src={option.icon}
-                                                alt=""
+                                                alt={`icon-selct-${option?.value}`}
                                                 className="flex-shrink-0 h-6 w-6 rounded-full"
                                             />
                                         )}
