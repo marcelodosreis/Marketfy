@@ -4,7 +4,7 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import ImageCard from 'components/ImageCard/ImageCard';
 
 describe('Components/ImageCard', () => {
-    it('Testing ImageCard Works', async () => {
+    it('Should ImageCard Works', async () => {
         const { container } = render(
             <ImageCard
                 title="Example Storybook"
@@ -18,7 +18,7 @@ describe('Components/ImageCard', () => {
         expect(container).toBeTruthy();
     });
 
-    it('Testing ImageCard Buttons Clicked', async () => {
+    it('Should ImageCard Buttons Clicked', async () => {
         const handleClick = jest.fn();
 
         render(

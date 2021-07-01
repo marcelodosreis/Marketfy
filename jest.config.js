@@ -24,7 +24,12 @@ module.exports = {
         'src/store',
         '.next/',
         '.storybook/',
-        'coverage/'
+        'coverage/',
+        'src/library/common/constants',
+        '.eslintrc.js',
+        'jest.config.js',
+        'postcss.config.js',
+        'tailwind.config.js',
         // 'src/main/config',
         // 'src/main/factories',
         // 'src/main/infra'

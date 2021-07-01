@@ -4,14 +4,14 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 
 const Footer = () => {
-    function toggleFooterSection(e) {
-        const list = e.target.parentElement.parentElement.querySelector('article');
-        if (list.classList.contains('h-0')) {
-            list.classList.remove('h-0');
-        } else {
-            list.classList.add('h-0');
-        }
-    }
+    // function toggleFooterSection(e) {
+    //     const list = e.target.parentElement.parentElement.querySelector('article');
+    //     if (list.classList.contains('h-0')) {
+    //         list.classList.remove('h-0');
+    //     } else {
+    //         list.classList.add('h-0');
+    //     }
+    // }
 
     return (
         <footer className="mt-16">
@@ -20,7 +20,7 @@ const Footer = () => {
                     <section className="relative text-gray-700 font-light font-light border-b px-4 pb-4 md:py-3 w-full md:border-none md:w-1/4">
                         <div className="md:hidden">
                             <button
-                                onClick={(event) => toggleFooterSection(event)}
+                                // onClick={(event) => toggleFooterSection(event)}
                                 className="uppercase text-xs font-bold tracking-wider text-blue-500 focus:outline-none border-t border-white py-4 w-full text-left"
                                 type="button">
                                 Lorem ipsum dolor sit amet consectetur adipiscing elit maecenas
@@ -32,7 +32,8 @@ const Footer = () => {
                             href="#">
                             Lorem ipsum dolor sit amet consectetur adipiscing elit maecenas mattis
                         </a>
-                        <article className="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden">
+                        {/* <article className="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden"> */}
+                        <article className="md:h-auto -mt-4 md:mt-0 overflow-hidden">
                             <ul className="my-5 text-sm tracking-wide">
                                 <li className="my-3 tracking-wide">
                                     <a href="#">Fusce vel sem</a>
@@ -52,7 +53,7 @@ const Footer = () => {
                     <section className="relative text-gray-700 font-light font-light border-b px-4 pb-4 md:py-3 w-full md:border-none md:w-1/4">
                         <div className="md:hidden">
                             <button
-                                onClick={(event) => toggleFooterSection(event)}
+                                // onClick={(event) => toggleFooterSection(event)}
                                 className="uppercase text-xs font-bold tracking-wider text-blue-500 focus:outline-none border-t border-white py-4 w-full text-left"
                                 type="button">
                                 Ut porta
@@ -63,7 +64,8 @@ const Footer = () => {
                             href="#">
                             Ut porta
                         </a>
-                        <article className="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden">
+                        {/* <article className="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden"> */}
+                        <article className="md:h-auto -mt-4 md:mt-0 overflow-hidden">
                             <ul className="my-5 text-sm tracking-wide">
                                 <li className="my-3 tracking-wide">
                                     <a href="#">Pellentesque rhoncus</a>
@@ -92,7 +94,7 @@ const Footer = () => {
                     <section className="relative text-gray-700 font-light font-light border-b px-4 pb-4 md:py-3 w-full md:border-none md:w-1/4">
                         <div className="md:hidden">
                             <button
-                                onClick={(event) => toggleFooterSection(event)}
+                                // onClick={(event) => toggleFooterSection(event)}
                                 className="uppercase text-xs font-bold tracking-wider text-blue-500 focus:outline-none border-t border-white py-4 w-full text-left"
                                 type="button">
                                 Praesent elementum
@@ -103,7 +105,8 @@ const Footer = () => {
                             href="#">
                             Praesent elementum
                         </a>
-                        <article className="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden">
+                        {/* <article className="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden"> */}
+                        <article className="md:h-auto -mt-4 md:mt-0 overflow-hidden">
                             <ul className="my-5 text-sm tracking-wide">
                                 <li className="my-3 tracking-wide">
                                     <a href="#">Mauris mattis nunc</a>
@@ -120,7 +123,7 @@ const Footer = () => {
                     <section className="relative text-gray-700 font-light font-light border-b px-4 pb-4 md:py-3 w-full md:border-none md:w-1/4">
                         <div className="md:hidden">
                             <button
-                                onClick={(event) => toggleFooterSection(event)}
+                                // onClick={(event) => toggleFooterSection(event)}
                                 className="uppercase text-xs font-bold tracking-wider text-blue-500 focus:outline-none border-t border-white py-4 w-full text-left"
                                 type="button">
                                 Aenean gravida orci in sem varius
@@ -131,7 +134,8 @@ const Footer = () => {
                             href="#">
                             Aenean gravida orci in sem varius
                         </a>
-                        <article className="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden">
+                        {/* <article className="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden"> */}
+                        <article className="md:h-auto -mt-4 md:mt-0 overflow-hidden">
                             <ul className="my-5 text-sm tracking-wide">
                                 <li className="my-3 tracking-wide">
                                     <a href="#">Cras id ipsum</a>
@@ -142,7 +146,7 @@ const Footer = () => {
                     <section className="relative text-gray-700 font-light font-light border-b px-4 pb-4 md:py-3 w-full md:border-none md:w-1/4">
                         <div className="md:hidden">
                             <button
-                                onClick={(event) => toggleFooterSection(event)}
+                                // onClick={(event) => toggleFooterSection(event)}
                                 className="uppercase text-xs font-bold tracking-wider text-blue-500 focus:outline-none border-t border-white py-4 w-full text-left"
                                 type="button">
                                 Donec a lorem
@@ -153,7 +157,8 @@ const Footer = () => {
                             href="#">
                             Donec a lorem
                         </a>
-                        <article className="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden">
+                        {/* <article className="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden"> */}
+                        <article className="md:h-auto -mt-4 md:mt-0 overflow-hidden">
                             <ul className="my-5 text-sm tracking-wide">
                                 <li className="my-3 tracking-wide">
                                     <a href="#">Sed a diam</a>
@@ -170,7 +175,7 @@ const Footer = () => {
                     <section className="relative text-gray-700 font-light font-light border-b px-4 pb-4 md:py-3 w-full md:border-none md:w-1/4">
                         <div className="md:hidden">
                             <button
-                                onClick={(event) => toggleFooterSection(event)}
+                                // onClick={(event) => toggleFooterSection(event)}
                                 className="uppercase text-xs font-bold tracking-wider text-blue-500 focus:outline-none border-t border-white py-4 w-full text-left"
                                 type="button">
                                 Integer interdum
@@ -181,7 +186,8 @@ const Footer = () => {
                             href="#">
                             Integer interdum
                         </a>
-                        <article className="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden">
+                        {/* <article className="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden"> */}
+                        <article className="md:h-auto -mt-4 md:mt-0 overflow-hidden">
                             <ul className="my-5 text-sm tracking-wide">
                                 <li className="my-3 tracking-wide">
                                     <a href="#">Dignissim gravida</a>
@@ -204,7 +210,7 @@ const Footer = () => {
                     <section className="relative text-gray-700 font-light font-light border-b px-4 pb-4 md:py-3 w-full md:border-none md:w-1/4">
                         <div className="md:hidden">
                             <button
-                                onClick={(event) => toggleFooterSection(event)}
+                                // onClick={(event) => toggleFooterSection(event)}
                                 className="uppercase text-xs font-bold tracking-wider text-blue-500 focus:outline-none border-t border-white py-4 w-full text-left"
                                 type="button">
                                 Quisque
@@ -215,7 +221,8 @@ const Footer = () => {
                             href="#">
                             Quisque
                         </a>
-                        <article className="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden">
+                        {/* <article className="h-0 md:h-auto -mt-4 md:mt-0 overflow-hidden"> */}
+                        <article className="md:h-auto -mt-4 md:mt-0 overflow-hidden">
                             <ul className="my-5 text-sm tracking-wide">
                                 <li className="my-3 tracking-wide">
                                     <a href="#">Finibus nulla eget</a>

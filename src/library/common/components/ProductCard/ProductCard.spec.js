@@ -23,12 +23,12 @@ const ProductCardMock = {
 };
 
 describe('Components/ProductCard', () => {
-    it('Testing ProductCard Works', async () => {
+    it('Should ProductCard Works', async () => {
         const { container } = render(<ProductCard {...ProductCardMock} />);
         expect(container).toBeTruthy();
     });
 
-    it('Testing ImageCard Buttons Clicked', async () => {
+    it('Should ImageCard Buttons Clicked', async () => {
         const handleClick = jest.fn();
 
         render(<ProductCard {...ProductCardMock} onClick={handleClick} />);
@@ -37,7 +37,7 @@ describe('Components/ProductCard', () => {
         expect(handleClick).toHaveBeenCalledTimes(1);
     });
 
-    it('Testing urlPath Function', async () => {
+    it('Should urlPath Function', async () => {
         const result = urlPath('React Testing In Library', 323452);
         const expectValue = 'product/react-testing-in-library/323452';
 

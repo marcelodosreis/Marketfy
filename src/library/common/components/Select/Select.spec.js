@@ -16,7 +16,7 @@ const SelectMock = {
 };
 
 describe('Components/Select', () => {
-    it('Testing Select Works', async () => {
+    it('Should Select Works', async () => {
         const { container } = render(<Select {...SelectMock} />);
         expect(container).toBeTruthy();
     });

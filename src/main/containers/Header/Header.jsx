@@ -14,7 +14,7 @@ import { HiOutlineShoppingCart } from 'react-icons/hi';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 import { withLang } from 'library/utilities/providers/LanguageProvider/LanguageProvider';
-import useAuth from 'library/utilities/hooks/useAuth';
+import useAuth from 'library/utilities/hooks/useAuth/useAuth';
 
 import locales from './_locales/locales.json';
 
