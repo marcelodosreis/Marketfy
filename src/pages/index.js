@@ -1,6 +1,9 @@
+import withCommerce from 'library/utilities/hocs/withCommerce';
+import HomeContainer from 'modules/Home/Home';
 import React from 'react';
 
-import HomeContainer from 'modules/Home/Home';
-export default function Home() {
+function HomePage() {
     return <HomeContainer />;
 }
+
+export default withCommerce(HomePage);

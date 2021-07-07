@@ -1,7 +1,9 @@
+import withCommerce from 'library/utilities/hocs/withCommerce';
+import ProductContainer from 'modules/Product/Product';
 import React from 'react';
 
-import ProductContainer from 'modules/Product/Product';
-
-export default function Product() {
+function Product() {
     return <ProductContainer />;
 }
+
+export default withCommerce(Product);

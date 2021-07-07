@@ -1,3 +1,4 @@
+import withCommerce from 'library/utilities/hocs/withCommerce';
 import React from 'react';
 
 const AboutPage = () => <p>This is about (Next.js!)</p>;
@@ -9,4 +10,4 @@ export async function getServerSideProps() {
     return { props: {} };
 }
 
-export default AboutPage;
+export default withCommerce(AboutPage);

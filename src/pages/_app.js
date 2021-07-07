@@ -1,18 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
-import Router from 'next/router';
-import App from 'next/app';
-
-import Header from 'main/containers/Header/Header';
-import Footer from 'library/common/components/Footer/Footer';
-import CartList from 'main/containers/CartList/CartList';
-
 import CombineProviders from 'library/utilities/providers/index';
-
-import 'tailwindcss/tailwind.css';
-
+import App from 'next/app';
+import Router from 'next/router';
 import NProgress from 'nprogress';
+import PropTypes from 'prop-types';
+import React from 'react';
+import 'tailwindcss/tailwind.css';
 
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
@@ -21,10 +13,7 @@ Router.events.on('routeChangeError', () => NProgress.done());
 function MyApp({ Component, pageProps }) {
     return (
         <CombineProviders>
-            <Header />
-            <CartList />
             <Component {...pageProps} />
-            <Footer />
         </CombineProviders>
     );
 }
