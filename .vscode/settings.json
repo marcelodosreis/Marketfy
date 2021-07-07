@@ -1,0 +1,10 @@
+{
+    "eslint.options": {
+        "configFile": ".eslintrc.js"
+    },
+    "editor.codeActionsOnSave": ["source.organizeImports", "source.fixAll"],
+    "files.associations": {
+        "*.js": "javascriptreact"
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
