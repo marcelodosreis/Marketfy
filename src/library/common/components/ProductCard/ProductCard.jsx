@@ -1,9 +1,6 @@
-import React from 'react';
 import { useRouter } from 'next/router';
-
-import Link from 'next/link';
-
 import PropTypes from 'prop-types';
+import React from 'react';
 
 export const urlPath = (title, id) =>
     `product/${title?.trim()?.toLowerCase().replace(/\s/g, '-')}/${id}`;
