@@ -5,7 +5,7 @@ module.exports = {
 
     testEnvironment: 'jsdom',
 
-    displayName: 'Marketfy',
+    displayName: 'modular-ecommerce',
 
     collectCoverageFrom: [
         '**/*.{js,jsx,ts,tsx}',
@@ -29,7 +29,7 @@ module.exports = {
         '.eslintrc.js',
         'jest.config.js',
         'postcss.config.js',
-        'tailwind.config.js',
+        'tailwind.config.js'
         // 'src/main/config',
         // 'src/main/factories',
         // 'src/main/infra'
