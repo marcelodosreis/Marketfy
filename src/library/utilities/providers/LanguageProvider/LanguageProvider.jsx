@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-
 import { LanguageConstants } from 'library/common/constants/LanguageConstants';
-
 import { useRouter } from 'next/router';
+import PropTypes from 'prop-types';
+import React, { useEffect, useState } from 'react';
 
 const LanguageContext = React.createContext();
 const LanguageConsumer = LanguageContext.Consumer;
@@ -24,14 +22,14 @@ const LanguageProvider = ({ children }) => {
         const langParam = `?lang=${lang}`;
 
         if (!router?.query?.lang) {
-            router.push(langParam, undefined, { shallow: true });
+            router.replace(langParam, null, { shallow: true });
             return;
         }
     }, [router.pathname]);
 
     useEffect(() => {
         const langParam = `?lang=${lang}`;
-        router.push(langParam, undefined, { shallow: true });
+        router.replace(langParam, null, { shallow: true });
     }, [lang]);
 
     return (
