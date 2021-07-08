@@ -1,24 +1,18 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-
-import Link from 'next/link';
-
-import { NavbarListConstants } from 'library/common/constants/NavbarConstants';
-import { toggleCartSidebar } from 'store/modules/cart/action';
-
 import Badge from 'components/Badge/Badge';
 import Select from 'components/Select/Select';
-
-import { GrLocation, GrFormSearch } from 'react-icons/gr';
-import { HiOutlineShoppingCart } from 'react-icons/hi';
-import { GiHamburgerMenu } from 'react-icons/gi';
-
-import { withLang } from 'library/utilities/providers/LanguageProvider/LanguageProvider';
+import { NavbarListConstants } from 'library/common/constants/NavbarConstants';
 import useAuth from 'library/utilities/hooks/useAuth/useAuth';
-
-import locales from './_locales/locales.json';
-
+import { withLang } from 'library/utilities/providers/LanguageProvider/LanguageProvider';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
+import React, { useState } from 'react';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { GrFormSearch, GrLocation } from 'react-icons/gr';
+import { HiOutlineShoppingCart } from 'react-icons/hi';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleCartSidebar } from 'store/modules/cart/action';
+import locales from './_locales/locales.json';
 
 const langOptions = [
     { value: 'pt-BR', icon: '/images/svg/brIcon.svg' },
@@ -31,6 +25,7 @@ const Header = ({ langProvider: { lang, updateLang } }) => {
     const { signinGoogle, user } = useAuth();
     const [headerIsOpen, setHeaderIsOpen] = useState(false);
     const dispatch = useDispatch();
+    const router = useRouter();
 
     return (
         <header>
@@ -55,7 +50,9 @@ const Header = ({ langProvider: { lang, updateLang } }) => {
                         <div className="justify-center hidden md:block">
                             <button
                                 className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
-                                onClick={() => (user?.token ? alert('Logged') : signinGoogle())}>
+                                onClick={() =>
+                                    user?.token ? router.push('/profile') : signinGoogle()
+                                }>
                                 {user?.token ? user?.name?.split(' ')[0] : 'Login'}
                             </button>
                         </div>
@@ -90,7 +87,9 @@ const Header = ({ langProvider: { lang, updateLang } }) => {
                     <div className="flex flex-col sm:flex-row">
                         <a
                             className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0 md:hidden"
-                            onClick={() => (user?.token ? alert('Logged') : signinGoogle())}>
+                            onClick={() =>
+                                user?.token ? router.push('/profile') : signinGoogle()
+                            }>
                             {user?.token ? user?.name?.split(' ')[0] : 'Login'}
                         </a>
                         {NavbarListConstants.map(({ id, name, pathname }) => (
