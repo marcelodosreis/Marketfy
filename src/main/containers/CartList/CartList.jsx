@@ -12,8 +12,7 @@ import { GrClose } from 'react-icons/gr';
 
 import { withLang } from 'library/utilities/providers/LanguageProvider/LanguageProvider';
 
-import locales 
-from './_locales/locales.json';
+import locales from './_locales/locales.json';
 
 import PropTypes from 'prop-types';
 
