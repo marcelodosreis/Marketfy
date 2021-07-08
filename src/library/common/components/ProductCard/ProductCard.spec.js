@@ -1,10 +1,8 @@
-import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
-
-import { useRouter } from 'next/router';
-import CombineProviders from 'library/utilities/providers/index';
-
+import { fireEvent, render, screen } from '@testing-library/react';
 import ProductCard, { urlPath } from 'components/ProductCard/ProductCard';
+import CombineProviders from 'library/utilities/providers/index';
+import { useRouter } from 'next/router';
+import React from 'react';
 
 jest.mock('next/router', () => ({
     __esModule: true,
@@ -46,7 +44,8 @@ describe('Components/ProductCard', () => {
 
     it('Should be router for correct url', () => {
         const mockRouter = {
-            push: jest.fn()
+            push: jest.fn(),
+            replace: jest.fn()
         };
         useRouter.mockReturnValue(mockRouter);
 

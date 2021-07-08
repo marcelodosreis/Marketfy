@@ -22,14 +22,14 @@ const LanguageProvider = ({ children }) => {
         const langParam = `?lang=${lang}`;
 
         if (!router?.query?.lang) {
-            router.replace(langParam, null, { shallow: true });
+            router?.replace(langParam, null, { shallow: true });
             return;
         }
     }, [router.pathname]);
 
     useEffect(() => {
         const langParam = `?lang=${lang}`;
-        router.replace(langParam, null, { shallow: true });
+        router?.replace(langParam, null, { shallow: true });
     }, [lang]);
 
     return (
