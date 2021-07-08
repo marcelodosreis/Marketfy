@@ -32,7 +32,11 @@ const ProductCard = ({ onClick, item }) => {
                 </button>
             </div>
             <div className="flex flex-col px-5 py-3">
-                <p onClick={() => router.push(urlPath(item?.name, item?.id))}>{item?.name}</p>
+                <p
+                    className="cursor-pointer"
+                    onClick={() => router.push(urlPath(item?.name, item?.id))}>
+                    {item?.name}
+                </p>
                 <span className="text-gray-500 mt-2">${item?.price}</span>
             </div>
         </div>
