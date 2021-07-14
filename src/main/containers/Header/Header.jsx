@@ -22,7 +22,7 @@ const langOptions = [
 
 const Header = ({ langProvider: { lang, updateLang } }) => {
     const { isOpen: cartIsOpen, hasNewProducts } = useSelector((state) => state.cart);
-    const { signinGoogle, user } = useAuth();
+    const { user } = useAuth();
     const [headerIsOpen, setHeaderIsOpen] = useState(false);
     const dispatch = useDispatch();
     const router = useRouter();
@@ -51,7 +51,7 @@ const Header = ({ langProvider: { lang, updateLang } }) => {
                             <button
                                 className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0"
                                 onClick={() =>
-                                    user?.token ? router.push('/profile') : signinGoogle()
+                                    user?.token ? router.push('/profile') : router.push('/login')
                                 }>
                                 {user?.token ? user?.name?.split(' ')[0] : 'Login'}
                             </button>
@@ -88,7 +88,7 @@ const Header = ({ langProvider: { lang, updateLang } }) => {
                         <a
                             className="mt-3 text-gray-600 hover:underline sm:mx-3 sm:mt-0 md:hidden"
                             onClick={() =>
-                                user?.token ? router.push('/profile') : signinGoogle()
+                                user?.token ? router.push('/profile') : router.push('/login')
                             }>
                             {user?.token ? user?.name?.split(' ')[0] : 'Login'}
                         </a>
