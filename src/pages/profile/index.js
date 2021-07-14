@@ -1,4 +1,4 @@
-import { withUserAuth } from 'library/utilities/hocs/withUserAuth/withUserAuth';
+import { withUserAuth } from 'library/utilities/functions/withUserAuth/withUserAuth';
 import PropTypes from 'prop-types';
 import React from 'react';
 
