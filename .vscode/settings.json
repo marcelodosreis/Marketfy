@@ -2,7 +2,7 @@
     "eslint.options": {
         "configFile": ".eslintrc.js"
     },
-    "editor.codeActionsOnSave": ["source.organizeImports", "source.fixAll"],
+    "editor.codeActionsOnSave": ["source.fixAll"],
     "files.associations": {
         "*.js": "javascriptreact"
     },
