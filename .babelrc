@@ -11,6 +11,7 @@
                             "infra/*": ["infra/*"],
                             "library/*": ["library/*"],
                             "main/*": ["main/*"],
+                            "modules/*": ["modules/*"],
                             "resources/*": ["resources/*"],
                             "store/*": ["store/*"],
                             // Sub-Folders
@@ -31,6 +32,7 @@
                             "infra/*": ["infra/*"],
                             "library/*": ["library/*"],
                             "main/*": ["main/*"],
+                            "modules/*": ["modules/*"],
                             "resources/*": ["resources/*"],
                             "store/*": ["store/*"],
                             // Sub-Folders

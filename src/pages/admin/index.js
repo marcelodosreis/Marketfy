@@ -1,3 +1,4 @@
+// Core
 import React from 'react';
 
 const AdminPage = () => <p>This is AdminPage (Next.js!)</p>;

@@ -1,6 +1,8 @@
+// Cpre
 import React from 'react';
-
 import PropTypes from 'prop-types';
+
+// Main
 import QuantityButton from 'main/containers/CartList/CartItem/QuantityButton/QuantityButton';
 
 const CartItem = ({ item }) => (

@@ -1,9 +1,16 @@
-import CombineProviders from 'library/utilities/providers/index';
+// Core
+import React from 'react';
+import PropTypes from 'prop-types';
+
+// Next
 import App from 'next/app';
 import Router from 'next/router';
+
+// Library
+import CombineProviders from 'library/utilities/providers/index';
+
+// Styles
 import NProgress from 'nprogress';
-import PropTypes from 'prop-types';
-import React from 'react';
 import 'tailwindcss/tailwind.css';
 
 Router.events.on('routeChangeStart', () => NProgress.start());

@@ -1,8 +1,9 @@
+// Core
 import React from 'react';
-
-import locales from './_locales/locales.json';
-
 import PropTypes from 'prop-types';
+
+// Locales
+import locales from './_locales/locales.json';
 
 const PromoteCode = ({ lang }) => (
     <div className="mt-8">

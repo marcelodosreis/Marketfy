@@ -1,6 +1,10 @@
+// Redux
 import createSagaMiddleware from 'redux-saga';
 
+// Store
 import createStore from './createStore';
+
+// Redux Modules
 import rootReducer from './modules/rootReducer';
 import rootSaga from './modules/rootSaga';
 

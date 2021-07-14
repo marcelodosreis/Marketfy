@@ -1,5 +1,8 @@
-import { withSubdomain } from 'library/utilities/functions/withSubdomain/withSubdomain';
+// Core
 import React from 'react';
+
+// Library
+import { withSubdomain } from 'library/utilities/functions/withSubdomain';
 
 const LoginPage = () => <p>Login (Next.js!)</p>;
 

@@ -1,8 +1,15 @@
-import firebase from 'infra/firebase';
-import cookie from 'js-cookie';
-import Router from 'next/router';
-import PropTypes from 'prop-types';
+// Core
 import React, { createContext, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+
+// Next
+import Router from 'next/router';
+
+// Infra
+import firebase from 'infra/firebase';
+
+// Libs
+import cookie from 'js-cookie';
 
 const AuthContext = createContext();
 

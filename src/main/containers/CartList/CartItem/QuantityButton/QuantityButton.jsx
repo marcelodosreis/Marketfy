@@ -1,10 +1,14 @@
+// React
 import React from 'react';
-import { useDispatch } from 'react-redux';
-
 import PropTypes from 'prop-types';
 
+// Redux
+import { useDispatch } from 'react-redux';
+
+// Store
 import { addCartItem, removeCartItem } from 'store/modules/cart/action';
 
+// Icons
 import { BsPlusCircle, BsDashCircle } from 'react-icons/bs';
 
 const QuantityButton = ({ item }) => {

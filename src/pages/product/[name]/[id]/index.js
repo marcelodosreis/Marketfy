@@ -1,9 +1,14 @@
-import withCommerce from 'library/utilities/hocs/withCommerce';
-import ProductContainer from 'modules/Product/Product';
+// Core
 import React from 'react';
 
+// Library
+import withCommerce from 'library/utilities/hocs/withCommerce';
+
+// Modules
+import ProductModule from 'modules/Product/Product';
+
 function Product() {
-    return <ProductContainer />;
+    return <ProductModule />;
 }
 
 export default withCommerce(Product);

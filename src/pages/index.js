@@ -1,9 +1,14 @@
-import withCommerce from 'library/utilities/hocs/withCommerce';
-import HomeContainer from 'modules/Home/Home';
+// Core
 import React from 'react';
 
+// Modules
+import HomeModule from 'modules/Home/Home';
+
+// Library
+import withCommerce from 'library/utilities/hocs/withCommerce';
+
 function HomePage() {
-    return <HomeContainer />;
+    return <HomeModule />;
 }
 
 export default withCommerce(HomePage);

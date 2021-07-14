@@ -1,7 +1,10 @@
+// Core
 import React from 'react';
 
+// Components
 import Badge from './Badge';
 
+// Icons
 import { GrLocation } from 'react-icons/gr';
 
 const BadgeMock = {

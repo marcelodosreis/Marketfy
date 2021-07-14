@@ -1,5 +1,7 @@
+// Core
 import React from 'react';
 
+// Components
 import ProductCard from './ProductCard';
 
 const ProductCardMock = {

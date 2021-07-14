@@ -1,6 +1,9 @@
-import { useRouter } from 'next/router';
-import PropTypes from 'prop-types';
+// Core
 import React from 'react';
+import PropTypes from 'prop-types';
+
+// Next
+import { useRouter } from 'next/router';
 
 export const urlPath = (title, id) =>
     `product/${title?.trim()?.toLowerCase().replace(/\s/g, '-')}/${id}`;

@@ -1,7 +1,11 @@
+// Core
 import React from 'react';
 import { render } from '@testing-library/react';
 
+// Components
 import Button from 'components/Button/Button';
+
+// Icons
 import { GrLocation } from 'react-icons/gr';
 
 describe('Components/Button', () => {

@@ -1,7 +1,10 @@
+// Core
 import React from 'react';
 
+// Components
 import Button from './Button';
 
+// Icons
 import { GrLocation } from 'react-icons/gr';
 
 const ButtonMock = {

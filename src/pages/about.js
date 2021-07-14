@@ -1,5 +1,8 @@
-import withCommerce from 'library/utilities/hocs/withCommerce';
+// Core
 import React from 'react';
+
+// Library
+import withCommerce from 'library/utilities/hocs/withCommerce';
 
 const AboutPage = () => <p>This is about (Next.js!)</p>;
 

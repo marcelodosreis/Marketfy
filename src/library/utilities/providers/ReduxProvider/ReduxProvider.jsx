@@ -1,9 +1,11 @@
+// React
 import React from 'react';
-
 import PropTypes from 'prop-types';
 
+// Redux
 import { Provider } from 'react-redux';
 
+// .
 import { store } from '../../../../store/index';
 
 const ReduxProvider = ({ children }) => {

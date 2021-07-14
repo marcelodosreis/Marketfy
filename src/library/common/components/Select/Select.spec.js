@@ -1,6 +1,8 @@
+// Core
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 
+// Components
 import Select from 'components/Select/Select';
 
 const options = [

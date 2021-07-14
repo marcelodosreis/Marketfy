@@ -1,6 +1,9 @@
-import { withUserAuth } from 'library/utilities/functions/withUserAuth/withUserAuth';
-import PropTypes from 'prop-types';
+// Core
 import React from 'react';
+import PropTypes from 'prop-types';
+
+// Library
+import { withUserAuth } from 'library/utilities/functions/withUserAuth';
 
 const ProfilePage = ({ isLogged }) => {
     return <p>This is ProfilePage (Next.js!) Logged: {isLogged}</p>;

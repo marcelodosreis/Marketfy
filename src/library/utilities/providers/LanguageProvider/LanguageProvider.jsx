@@ -1,7 +1,12 @@
-import { LanguageConstants } from 'library/common/constants/LanguageConstants';
-import { useRouter } from 'next/router';
-import PropTypes from 'prop-types';
+// Core
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+
+// Next
+import { useRouter } from 'next/router';
+
+// Library
+import { LanguageConstants } from 'library/common/constants/LanguageConstants';
 
 const LanguageContext = React.createContext();
 const LanguageConsumer = LanguageContext.Consumer;

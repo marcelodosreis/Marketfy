@@ -1,6 +1,8 @@
+// Core
 import React from 'react';
 import { render } from '@testing-library/react';
 
+// Components
 import Footer from 'components/Footer/Footer';
 
 describe('Components/Footer', () => {

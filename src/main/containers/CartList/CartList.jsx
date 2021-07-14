@@ -1,20 +1,29 @@
+// Core
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
+
+// Redux
 import { useSelector, useDispatch } from 'react-redux';
 
+// Store
 import { toggleCartSidebar, toggleNewProductNotification } from 'store/modules/cart/action';
 
+// Library
+import { withLang } from 'library/utilities/providers/LanguageProvider/LanguageProvider';
+
+// Components
 import Button from 'components/Button/Button';
+
+// Main
 import PromoteCode from 'main/containers/CartList/PromoteCode/PromoteCode';
 import CartItem from 'main/containers/CartList/CartItem/CartItem';
 
+// Icons
 import { BsArrowRight } from 'react-icons/bs';
 import { GrClose } from 'react-icons/gr';
 
-import { withLang } from 'library/utilities/providers/LanguageProvider/LanguageProvider';
-
+// Locales
 import locales from './_locales/locales.json';
-
-import PropTypes from 'prop-types';
 
 const CartList = ({ langProvider: { lang } }) => {
     const { isOpen, items, hasNewProducts } = useSelector((state) => state.cart);

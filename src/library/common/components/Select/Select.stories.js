@@ -1,5 +1,7 @@
+// Core
 import React, { useState } from 'react';
 
+// Component
 import Select from './Select';
 
 const selectMock = [

@@ -1,17 +1,31 @@
-import Badge from 'components/Badge/Badge';
-import Select from 'components/Select/Select';
-import { NavbarListConstants } from 'library/common/constants/NavbarConstants';
-import useAuth from 'library/utilities/hooks/useAuth/useAuth';
-import { withLang } from 'library/utilities/providers/LanguageProvider/LanguageProvider';
+// Core
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+// Next
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+
+// Redux
+import { useDispatch, useSelector } from 'react-redux';
+
+// Library
+import useAuth from 'library/utilities/hooks/useAuth/useAuth';
+import { withLang } from 'library/utilities/providers/LanguageProvider/LanguageProvider';
+import { NavbarListConstants } from 'library/common/constants/NavbarConstants';
+
+// Components
+import Badge from 'components/Badge/Badge';
+import Select from 'components/Select/Select';
+
+// Store
+import { toggleCartSidebar } from 'store/modules/cart/action';
+
+// Icons
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { GrFormSearch, GrLocation } from 'react-icons/gr';
 import { HiOutlineShoppingCart } from 'react-icons/hi';
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleCartSidebar } from 'store/modules/cart/action';
+
+// Locales
 import locales from './_locales/locales.json';
 
 const langOptions = [

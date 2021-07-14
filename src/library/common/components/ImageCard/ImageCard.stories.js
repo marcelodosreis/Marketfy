@@ -1,5 +1,7 @@
+// Core
 import React from 'react';
 
+// Components
 import ImageCard from './ImageCard';
 
 const ImageCardMock = {

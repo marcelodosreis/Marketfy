@@ -1,8 +1,15 @@
-import { fireEvent, render, screen } from '@testing-library/react';
-import ProductCard, { urlPath } from 'components/ProductCard/ProductCard';
-import CombineProviders from 'library/utilities/providers/index';
-import { useRouter } from 'next/router';
+// Core
 import React from 'react';
+import { fireEvent, render, screen } from '@testing-library/react';
+
+// Next
+import { useRouter } from 'next/router';
+
+// Library
+import CombineProviders from 'library/utilities/providers/index';
+
+// Components
+import ProductCard, { urlPath } from 'components/ProductCard/ProductCard';
 
 jest.mock('next/router', () => ({
     __esModule: true,

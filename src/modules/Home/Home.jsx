@@ -1,13 +1,17 @@
+// React
 import React from 'react';
+// import PropTypes from 'prop-types';
 
+// Redux
 import { useDispatch } from 'react-redux';
 
+// Components
 import ImageCard from 'components/ImageCard/ImageCard';
 import ProductCard from 'components/ProductCard/ProductCard';
 
+// Store
 import { addCartItem } from 'store/modules/cart/action';
 
-// import PropTypes from 'prop-types';
 export default function HomeContainer() {
     const dispatch = useDispatch();
 

@@ -1,3 +1,4 @@
+// Redux
 import { createStore, applyMiddleware } from 'redux';
 
 const store = (reducers, middleware) => {

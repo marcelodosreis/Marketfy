@@ -1,4 +1,7 @@
+// Redux
 import { all, takeLatest, select, put } from 'redux-saga/effects';
+
+// Store
 import { updateCartItems, toggleNewProductNotification } from 'store/modules/cart/action';
 
 export function* addCartItem({ payload }) {

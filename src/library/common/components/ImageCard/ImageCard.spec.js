@@ -1,6 +1,8 @@
+// Core
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
 
+// Components
 import ImageCard from 'components/ImageCard/ImageCard';
 
 describe('Components/ImageCard', () => {

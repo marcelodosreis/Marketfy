@@ -1,7 +1,11 @@
+// Core
 import React from 'react';
 import { render } from '@testing-library/react';
 
+// Components
 import Badge from 'components/Badge/Badge';
+
+// Icons
 import { GrLocation } from 'react-icons/gr';
 
 describe('Components/Badge', () => {
